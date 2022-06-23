@@ -1,0 +1,23 @@
+config:
+  docker_home_folder: /data                                                                    #
+  home_folder: /data/parsermanager                                                             #
+  harbor_host: sregistry.mts.ru                                                                #
+  harbor_repo: trivy                                                                           #
+  log_level: 5                                                                                 # [0 - 5]    0 - only fatal errors, 5 - all
+
+  parsers:
+    - name: jfrog
+      dockername: jfrogparser
+      auto_remove: true
+      result_hostdir: /data/parsermanager/data/jfrog
+      result_dockerdir: /data/jfrog
+    - name: ndv
+      dockername: ndvparser
+      auto_remove: true
+      result_hostdir: /data/parsermanager/data/ndv
+      result_dockerdir: /data/ndv
+    - name: snyk
+      dockername: snykparser
+      auto_remove: true
+      result_hostdir: /data/parsermanager/data/snyk
+      result_dockerdir: /data/snyk
